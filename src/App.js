@@ -1,10 +1,15 @@
 import React from 'react'
-import WeatherApp from './components/WeatherApp'
+import Child1 from './components/Child1'
+import { useSelector } from 'react-redux'
 
 const App = () => {
+  const data = useSelector((c)=>{
+    return (c.show.value)
+})
   return (
     <div>
-      <WeatherApp/>
+    <h3>App {data} </h3>
+      <Child1/>
     </div>
   )
 }
